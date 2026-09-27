@@ -277,7 +277,7 @@ def read_backup_metadata(zip_path: Path) -> dict[str, Any]:
     except json.JSONDecodeError as exc:
         raise ValueError("备份文件 metadata 不是合法 JSON") from exc
     if not isinstance(metadata, dict) or metadata.get("app_name") != APP_NAME:
-        raise ValueError("备份文件不是 AI 生图管理备份")
+        raise ValueError("备份文件不是意绘备份")
     return metadata
 
 
@@ -551,7 +551,7 @@ def load_data_package(path: Path) -> dict[str, Any]:
             manifest = json.loads(archive.read("export_manifest.json").decode("utf-8"))
             settings = json.loads(archive.read("settings.json").decode("utf-8"))
             if not isinstance(manifest, dict) or manifest.get("app_name") != APP_NAME:
-                raise ValueError("恢复文件不是 AI 生图管理导出包")
+                raise ValueError("恢复文件不是意绘导出包")
             if manifest.get("export_format") != "zip-jsonl":
                 raise ValueError("导出包格式不受支持")
             database = {
@@ -683,7 +683,7 @@ def validate_export_json(path: Path) -> dict[str, Any]:
     except json.JSONDecodeError as exc:
         raise ValueError("恢复文件不是合法 JSON") from exc
     if not isinstance(payload, dict) or payload.get("app_name") != APP_NAME:
-        raise ValueError("恢复文件不是 AI 生图管理导出")
+        raise ValueError("恢复文件不是意绘导出")
     database = payload.get("database")
     if not isinstance(database, dict):
         raise ValueError("恢复文件缺少 database 数据")

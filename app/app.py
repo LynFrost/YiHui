@@ -26,7 +26,7 @@ THUMBNAIL_CACHE_DIR = Path(os.getenv("AI_IMAGE_MANAGER_THUMBNAIL_CACHE_DIR", str
 CONFIG_FILE = CONFIG_DIR / "AIImageManager.config.json"
 DB_FILE = DATA_DIR / "AIImageManager.data.sqlite"
 DEFAULT_GENERATED_ROOT = SOFTWARE_ROOT / "generated"
-APP_VERSION = "V0.67"
+APP_VERSION = "V0.72"
 
 
 def db_needs_schema_migration(db_file: Path) -> bool:
@@ -118,7 +118,7 @@ def create_app(
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="AI Image Manager local web app")
+    parser = argparse.ArgumentParser(description="意绘 (YiHui) local web app")
     parser.add_argument("--host", default="127.0.0.1")
     parser.add_argument("--port", type=int, default=8787)
     parser.add_argument("--open", action="store_true")

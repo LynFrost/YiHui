@@ -92,7 +92,7 @@ def test_init_db_records_schema_version_metadata(tmp_path):
         for row in conn.execute("SELECT key, value FROM app_metadata")
     }
     assert metadata["schema_version"] == "5"
-    assert metadata["app_version"] == "V0.67"
+    assert metadata["app_version"] == "V0.72"
     assert metadata["last_migration_at"]
 
 

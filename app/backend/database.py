@@ -18,7 +18,7 @@ SORTS = {
 PER_PAGE_OPTIONS = {10, 20, 50, 100, 200}
 UNTAGGED_FILTER = "__untagged__"
 APP_SCHEMA_VERSION = 5
-APP_VERSION = "V0.67"
+APP_VERSION = "V0.72"
 RESERVED_NODE_NAMES = {"全部", "其他", "新建"}
 INSTANCE_SIZE_EXPR = (
     "COALESCE(NULLIF(generation_size, ''), "

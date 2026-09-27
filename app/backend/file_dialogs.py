@@ -10,7 +10,7 @@ IMAGE_FILTER = (
     "*.png;*.jpg;*.jpeg;*.webp;*.bmp;*.gif|All files (*.*)|*.*"
 )
 IMAGE_EXTENSIONS = {".png", ".jpg", ".jpeg", ".webp", ".bmp", ".gif"}
-BACKUP_FILTER = "AI Image Manager restore (*.zip;*.json)|*.zip;*.json|All files (*.*)|*.*"
+BACKUP_FILTER = "意绘恢复文件 (*.zip;*.json)|*.zip;*.json|All files (*.*)|*.*"
 
 
 def ps_quote(value: str) -> str:

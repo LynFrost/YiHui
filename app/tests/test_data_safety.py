@@ -163,7 +163,7 @@ def test_export_json_endpoint_includes_database_and_settings_without_images(tmp_
     assert resp.status_code == 200
     export_path = Path(resp.get_json()["path"])
     payload = json.loads(export_path.read_text(encoding="utf-8"))
-    assert payload["app_version"] == "V0.67"
+    assert payload["app_version"] == "V0.72"
     assert payload["image_files_included"] is False
     assert payload["settings"]["active_provider"] == "aiapis_gpt_image_2"
     assert payload["database"]["instances"][0]["prompt"] == "导出测试"
@@ -182,7 +182,7 @@ def test_v067_restore_old_json_without_instance_numbers_backfills_fixed_numbers(
         json.dumps(
             {
                 "app_name": "AIImageManager",
-                "app_version": "V0.67",
+                "app_version": "V0.72",
                 "schema_version": 4,
                 "settings": {},
                 "database": {
@@ -303,7 +303,7 @@ def test_v037_export_task_writes_zip_jsonl_package_with_manifest_and_snapshots(t
     assert result["status"] == "success"
     assert result["message"] == "导出完成"
     export_path = Path(result["path"])
-    assert export_path.name.startswith("AIImageManager_export_V0.67_")
+    assert export_path.name.startswith("AIImageManager_export_V0.72_")
     assert export_path.suffix == ".zip"
     assert result["summary"]["instance_count"] == 1
     assert result["summary"]["input_image_count"] == 1
@@ -355,7 +355,7 @@ def test_v037_export_temp_file_uses_documented_zip_tmp_name_and_chinese_progress
         Path(app.config["DB_FILE"]),
         Path(app.config["CONFIG_FILE"]),
         Path(app.config["EXPORT_DIR"]),
-        "V0.67",
+        "V0.72",
         progress_callback=lambda **event: progress_events.append(event),
     )
 
@@ -776,7 +776,7 @@ def test_v066_session_restore_inserts_nodes_parent_before_child_for_duplicate_na
     client = app.test_client()
     snapshot = {
         "app_name": "AIImageManager",
-        "app_version": "V0.67",
+        "app_version": "V0.72",
         "schema_version": 3,
         "settings": {},
         "database": {
@@ -853,7 +853,7 @@ def test_v066_session_restore_rolls_back_when_node_snapshot_has_true_sibling_dup
     client.post("/api/instances", json={"prompt": "恢复失败后保留"})
     snapshot = {
         "app_name": "AIImageManager",
-        "app_version": "V0.67",
+        "app_version": "V0.72",
         "schema_version": 3,
         "settings": {},
         "database": {

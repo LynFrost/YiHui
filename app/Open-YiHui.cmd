@@ -1,7 +1,7 @@
 @echo off
 setlocal EnableExtensions
 chcp 65001 >nul
-title AI Image Manager V0.71
+title 意绘 V0.72
 
 cd /d "%~dp0"
 
@@ -11,10 +11,10 @@ set "URL=http://%HOST%:%PORT%/"
 set "PYTHON_CMD="
 set "PYTHON_LABEL="
 set "LOG_DIR=%~dp0..\logs"
-set "LOG_FILE=%LOG_DIR%\AIImageManager-V0.71.log"
+set "LOG_FILE=%LOG_DIR%\YiHui-V0.72.log"
 
 echo.
-echo AI Image Manager V0.71
+echo 意绘 V0.72
 echo Folder: %CD%
 echo URL:    %URL%
 echo Log:    %LOG_FILE%
@@ -24,7 +24,7 @@ if not exist "%LOG_DIR%" mkdir "%LOG_DIR%" >nul 2>nul
 
 if not exist "app.py" (
   echo [ERROR] app.py was not found next to this launcher.
-  echo Please run this file from the AI image manager software folder.
+  echo Please run this file from the YiHui software folder.
   echo.
   pause
   exit /b 1
@@ -97,7 +97,7 @@ if not errorlevel 1 (
   echo Detected an existing local server on port %PORT%.
   echo To make this window control the service, close the old service and restart it here.
   echo.
-  choice /C YN /N /M "Close the old service and restart V0.71 in this CMD? [Y/N] "
+  choice /C YN /N /M "Close the old service and restart V0.72 in this CMD? [Y/N] "
   if errorlevel 2 (
     echo.
     echo Keeping the existing service. Opening %URL%
@@ -129,8 +129,8 @@ echo Close this window or press Ctrl+C to stop the server.
 echo Log file: %LOG_FILE%
 echo.
 
-start "AI Image Manager Browser Opener" /min powershell -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -Command "Start-Sleep -Milliseconds 900; Start-Process '%URL%'"
-powershell -NoProfile -ExecutionPolicy Bypass -Command "& { $ErrorActionPreference = 'Continue'; '[START] ' + (Get-Date -Format 'yyyy-MM-dd HH:mm:ss') + ' AI Image Manager V0.71' | Tee-Object -FilePath '%LOG_FILE%' -Append; & %PYTHON_CMD% app.py --host %HOST% --port %PORT% 2>&1 | Tee-Object -FilePath '%LOG_FILE%' -Append; exit $LASTEXITCODE }"
+start "YiHui Browser Opener" /min powershell -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -Command "Start-Sleep -Milliseconds 900; Start-Process '%URL%'"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "& { $ErrorActionPreference = 'Continue'; '[START] ' + (Get-Date -Format 'yyyy-MM-dd HH:mm:ss') + ' 意绘 V0.72' | Tee-Object -FilePath '%LOG_FILE%' -Append; & %PYTHON_CMD% app.py --host %HOST% --port %PORT% 2>&1 | Tee-Object -FilePath '%LOG_FILE%' -Append; exit $LASTEXITCODE }"
 set "EXITCODE=%ERRORLEVEL%"
 
 echo.
