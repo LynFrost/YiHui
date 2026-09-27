@@ -376,7 +376,7 @@ def thumbnail_dir() -> Path:
 
 
 def app_version() -> str:
-    return str(current_app.config.get("APP_VERSION") or "V0.72")
+    return str(current_app.config.get("APP_VERSION") or "V0.73")
 
 
 def _exception_text(exc: Exception) -> str:

@@ -26,7 +26,7 @@ THUMBNAIL_CACHE_DIR = Path(os.getenv("AI_IMAGE_MANAGER_THUMBNAIL_CACHE_DIR", str
 CONFIG_FILE = CONFIG_DIR / "AIImageManager.config.json"
 DB_FILE = DATA_DIR / "AIImageManager.data.sqlite"
 DEFAULT_GENERATED_ROOT = SOFTWARE_ROOT / "generated"
-APP_VERSION = "V0.72"
+APP_VERSION = "V0.73"
 
 
 def db_needs_schema_migration(db_file: Path) -> bool:

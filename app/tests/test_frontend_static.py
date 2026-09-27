@@ -100,7 +100,7 @@ def compact_css(text: str) -> str:
 
 
 def test_v014_version_file_is_updated():
-    assert (ROOT / "VERSION").read_text(encoding="utf-8").strip() == "V0.72"
+    assert (ROOT / "VERSION").read_text(encoding="utf-8").strip() == "V0.73"
 
 
 def test_editing_instance_still_has_delete_action():
@@ -1185,7 +1185,7 @@ def test_v014_manager_title_version_path_title_and_save_layout_order():
         app_js.find("function renderOperationArea") : app_js.find("function renderTagFilterDropdown")
     ]
 
-    assert 'const APP_VERSION = "V0.72";' in app_js
+    assert 'const APP_VERSION = "V0.73";' in app_js
     assert "renderAppVersionBadge" in app_js
     assert "app-version" in css
     assert 'title="${escapeHtml(state.operation.generation_path)}"' in operation_area
@@ -1485,8 +1485,8 @@ def test_v018_assets_topbar_and_settings_compaction_are_explicit():
         app_js.find("function renderSettings") : app_js.find("function cloneSettings")
     ]
 
-    assert "/static/styles.css?v=V0.72" in index_html
-    assert "/static/app.js?v=V0.72" in index_html
+    assert "/static/styles.css?v=V0.73" in index_html
+    assert "/static/app.js?v=V0.73" in index_html
     topbar_css = css[css.find(".topbar") : css.find(".brand")]
     body_css = css[css.find("body {") : css.find("body.has-lightbox")]
     assert "--topbar-height: 52px;" in css
@@ -1496,8 +1496,8 @@ def test_v018_assets_topbar_and_settings_compaction_are_explicit():
     assert "right: 0;" in topbar_css
     assert "height: var(--topbar-height);" in topbar_css
     assert "padding-top: var(--topbar-height);" in body_css
-    assert "title 意绘 V0.72" in launcher
-    assert "Close the old service and restart V0.72 in this CMD" in launcher
+    assert "title 意绘 V0.73" in launcher
+    assert "Close the old service and restart V0.73 in this CMD" in launcher
     assert "Provider 基础信息" not in settings_fn
     identity_grid = settings_fn[
         settings_fn.find("provider-identity-grid") :
@@ -1876,7 +1876,7 @@ def test_v024_frontend_uses_native_modules_and_expected_files_exist():
     raw_app_js = read_frontend_raw("app.js")
     module_root = ROOT / "frontend" / "js"
 
-    assert '<script type="module" src="/static/app.js?v=V0.72"></script>' in index_html
+    assert '<script type="module" src="/static/app.js?v=V0.73"></script>' in index_html
     assert module_root.is_dir()
     for name in FRONTEND_MODULE_ORDER:
         assert (module_root / name).is_file(), name
@@ -1916,7 +1916,7 @@ def test_v025_css_uses_import_entry_and_expected_module_files_exist():
     raw_styles = read_frontend_raw("styles.css")
     css_root = ROOT / "frontend" / "css"
 
-    assert '<link rel="stylesheet" href="/static/styles.css?v=V0.72">' in index_html
+    assert '<link rel="stylesheet" href="/static/styles.css?v=V0.73">' in index_html
     assert "frontend/css" not in index_html
     assert css_root.is_dir()
     for name in CSS_MODULE_ORDER:
@@ -2506,10 +2506,10 @@ def test_v031_version_assets_and_launcher_are_updated():
     index_html = read_frontend("index.html")
     launcher = (ROOT / "Open-YiHui.cmd").read_text(encoding="utf-8")
 
-    assert 'const APP_VERSION = "V0.72";' in app_js
-    assert "/static/styles.css?v=V0.72" in index_html
-    assert "/static/app.js?v=V0.72" in index_html
-    assert "Close the old service and restart V0.72 in this CMD" in launcher
+    assert 'const APP_VERSION = "V0.73";' in app_js
+    assert "/static/styles.css?v=V0.73" in index_html
+    assert "/static/app.js?v=V0.73" in index_html
+    assert "Close the old service and restart V0.73 in this CMD" in launcher
 
 
 def test_v031_image_stabilizer_verifies_current_page_images_after_render():
@@ -2575,11 +2575,11 @@ def test_v032_version_assets_and_launcher_are_updated():
     index_html = read_frontend("index.html")
     launcher = (ROOT / "Open-YiHui.cmd").read_text(encoding="utf-8")
 
-    assert (ROOT / "VERSION").read_text(encoding="utf-8").strip() == "V0.72"
-    assert 'const APP_VERSION = "V0.72";' in app_js
-    assert "/static/styles.css?v=V0.72" in index_html
-    assert "/static/app.js?v=V0.72" in index_html
-    assert "Close the old service and restart V0.72 in this CMD" in launcher
+    assert (ROOT / "VERSION").read_text(encoding="utf-8").strip() == "V0.73"
+    assert 'const APP_VERSION = "V0.73";' in app_js
+    assert "/static/styles.css?v=V0.73" in index_html
+    assert "/static/app.js?v=V0.73" in index_html
+    assert "Close the old service and restart V0.73 in this CMD" in launcher
 
 
 def test_v032_save_area_arrow_keyboard_paging_is_guarded_and_reuses_pagination():
@@ -2643,11 +2643,11 @@ def test_v033_version_assets_and_launcher_are_updated():
     index_html = read_frontend("index.html")
     launcher = (ROOT / "Open-YiHui.cmd").read_text(encoding="utf-8")
 
-    assert (ROOT / "VERSION").read_text(encoding="utf-8").strip() == "V0.72"
-    assert 'const APP_VERSION = "V0.72";' in app_js
-    assert "/static/styles.css?v=V0.72" in index_html
-    assert "/static/app.js?v=V0.72" in index_html
-    assert "Close the old service and restart V0.72 in this CMD" in launcher
+    assert (ROOT / "VERSION").read_text(encoding="utf-8").strip() == "V0.73"
+    assert 'const APP_VERSION = "V0.73";' in app_js
+    assert "/static/styles.css?v=V0.73" in index_html
+    assert "/static/app.js?v=V0.73" in index_html
+    assert "Close the old service and restart V0.73 in this CMD" in launcher
 
 
 def test_v033_prompt_search_clear_button_is_inside_search_input_and_refreshes():
@@ -2883,9 +2883,9 @@ def test_v036_thumbnail_view_state_toolbar_and_persistence_exist():
         render_save_js.find("Object.assign(globalThis")
     ]
 
-    assert (ROOT / "VERSION").read_text(encoding="utf-8").strip() == "V0.72"
-    assert 'const APP_VERSION = "V0.72";' in read_frontend("app.js")
-    assert "title 意绘 V0.72" in launcher
+    assert (ROOT / "VERSION").read_text(encoding="utf-8").strip() == "V0.73"
+    assert 'const APP_VERSION = "V0.73";' in read_frontend("app.js")
+    assert "title 意绘 V0.73" in launcher
     assert 'saveViewMode: "list"' in state_js
     assert 'save_view_mode: "list"' in persistence_js
     assert "persistedSaveViewMode" in persistence_js
@@ -3126,11 +3126,11 @@ def test_v037_data_safety_uses_task_export_restore_preview_and_summary_ui():
     actions_data_safety_js = (ROOT / "frontend" / "js" / "actions-data-safety.js").read_text(encoding="utf-8")
     events_js = (ROOT / "frontend" / "js" / "events.js").read_text(encoding="utf-8")
 
-    assert 'const APP_VERSION = "V0.72";' in read_frontend("app.js")
-    assert (ROOT / "VERSION").read_text(encoding="utf-8").strip() == "V0.72"
-    assert "/static/styles.css?v=V0.72" in read_frontend("index.html")
-    assert "/static/app.js?v=V0.72" in read_frontend("index.html")
-    assert "title 意绘 V0.72" in (ROOT / "Open-YiHui.cmd").read_text(encoding="utf-8")
+    assert 'const APP_VERSION = "V0.73";' in read_frontend("app.js")
+    assert (ROOT / "VERSION").read_text(encoding="utf-8").strip() == "V0.73"
+    assert "/static/styles.css?v=V0.73" in read_frontend("index.html")
+    assert "/static/app.js?v=V0.73" in read_frontend("index.html")
+    assert "title 意绘 V0.73" in (ROOT / "Open-YiHui.cmd").read_text(encoding="utf-8")
     assert "exportTaskId" in state_js
     assert "exportTask" in state_js
     assert "restorePreview" in state_js
@@ -3159,10 +3159,10 @@ def test_v038_tag_management_page_manages_only_used_tags():
     actions_tag_js = (ROOT / "frontend" / "js" / "actions-tag-management.js").read_text(encoding="utf-8")
     css = read_frontend("styles.css")
 
-    assert (ROOT / "VERSION").read_text(encoding="utf-8").strip() == "V0.72"
-    assert 'const APP_VERSION = "V0.72";' in app_js
-    assert "/static/styles.css?v=V0.72" in index_html
-    assert "/static/app.js?v=V0.72" in index_html
+    assert (ROOT / "VERSION").read_text(encoding="utf-8").strip() == "V0.73"
+    assert 'const APP_VERSION = "V0.73";' in app_js
+    assert "/static/styles.css?v=V0.73" in index_html
+    assert "/static/app.js?v=V0.73" in index_html
     assert 'data-page="tag-management"' in index_html
     assert "标签管理" in index_html
     assert "tagManagement" in state_js
@@ -3192,11 +3192,11 @@ def test_v039_history_query_controls_and_cleanup_api_exist():
     launcher = (ROOT / "Open-YiHui.cmd").read_text(encoding="utf-8")
     css = read_frontend("styles.css")
 
-    assert (ROOT / "VERSION").read_text(encoding="utf-8").strip() == "V0.72"
-    assert 'const APP_VERSION = "V0.72";' in app_js
-    assert "/static/styles.css?v=V0.72" in index_html
-    assert "/static/app.js?v=V0.72" in index_html
-    assert "title 意绘 V0.72" in launcher
+    assert (ROOT / "VERSION").read_text(encoding="utf-8").strip() == "V0.73"
+    assert 'const APP_VERSION = "V0.73";' in app_js
+    assert "/static/styles.css?v=V0.73" in index_html
+    assert "/static/app.js?v=V0.73" in index_html
+    assert "title 意绘 V0.73" in launcher
     assert 'data-page="tag-management"' in index_html
     assert 'q: ""' in state_js
     assert 'provider: "all"' in state_js
@@ -3237,8 +3237,8 @@ def test_v043_thumbnail_and_list_selection_support_shift_batch_actions():
     events_js = (ROOT / "frontend" / "js" / "events.js").read_text(encoding="utf-8")
     css = read_frontend("styles.css")
 
-    assert (ROOT / "VERSION").read_text(encoding="utf-8").strip() == "V0.72"
-    assert 'const APP_VERSION = "V0.72";' in read_frontend("app.js")
+    assert (ROOT / "VERSION").read_text(encoding="utf-8").strip() == "V0.73"
+    assert 'const APP_VERSION = "V0.73";' in read_frontend("app.js")
     assert 'lastSelectedInstanceId: ""' in state_js
     assert 'if (state.saveViewMode === "thumbnail")' not in render_save_js[
         render_save_js.find("function currentPageSelectableIds") : render_save_js.find("function runningInstanceKey")

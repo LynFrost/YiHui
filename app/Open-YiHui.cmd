@@ -1,7 +1,7 @@
 @echo off
 setlocal EnableExtensions
 chcp 65001 >nul
-title 意绘 V0.72
+title 意绘 V0.73
 
 cd /d "%~dp0"
 
@@ -11,10 +11,10 @@ set "URL=http://%HOST%:%PORT%/"
 set "PYTHON_CMD="
 set "PYTHON_LABEL="
 set "LOG_DIR=%~dp0..\logs"
-set "LOG_FILE=%LOG_DIR%\YiHui-V0.72.log"
+set "LOG_FILE=%LOG_DIR%\YiHui-V0.73.log"
 
 echo.
-echo 意绘 V0.72
+echo 意绘 V0.73
 echo Folder: %CD%
 echo URL:    %URL%
 echo Log:    %LOG_FILE%
@@ -97,7 +97,7 @@ if not errorlevel 1 (
   echo Detected an existing local server on port %PORT%.
   echo To make this window control the service, close the old service and restart it here.
   echo.
-  choice /C YN /N /M "Close the old service and restart V0.72 in this CMD? [Y/N] "
+  choice /C YN /N /M "Close the old service and restart V0.73 in this CMD? [Y/N] "
   if errorlevel 2 (
     echo.
     echo Keeping the existing service. Opening %URL%
@@ -130,7 +130,7 @@ echo Log file: %LOG_FILE%
 echo.
 
 start "YiHui Browser Opener" /min powershell -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -Command "Start-Sleep -Milliseconds 900; Start-Process '%URL%'"
-powershell -NoProfile -ExecutionPolicy Bypass -Command "& { $ErrorActionPreference = 'Continue'; '[START] ' + (Get-Date -Format 'yyyy-MM-dd HH:mm:ss') + ' 意绘 V0.72' | Tee-Object -FilePath '%LOG_FILE%' -Append; & %PYTHON_CMD% app.py --host %HOST% --port %PORT% 2>&1 | Tee-Object -FilePath '%LOG_FILE%' -Append; exit $LASTEXITCODE }"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "& { $ErrorActionPreference = 'Continue'; '[START] ' + (Get-Date -Format 'yyyy-MM-dd HH:mm:ss') + ' 意绘 V0.73' | Tee-Object -FilePath '%LOG_FILE%' -Append; & %PYTHON_CMD% app.py --host %HOST% --port %PORT% 2>&1 | Tee-Object -FilePath '%LOG_FILE%' -Append; exit $LASTEXITCODE }"
 set "EXITCODE=%ERRORLEVEL%"
 
 echo.

@@ -1,7 +1,7 @@
 const app = document.querySelector("#app");
 const brand = document.querySelector(".brand");
 const tabs = document.querySelectorAll(".tab");
-const APP_VERSION = "V0.72";
+const APP_VERSION = "V0.73";
 const SIZE_MAP = {
   "1:1":  {"1K": "1024x1024", "2K": "2048x2048", "4K": "2880x2880"},
   "5:4":  {"1K": "1280x1024", "2K": "2560x2048", "4K": "3200x2560"},

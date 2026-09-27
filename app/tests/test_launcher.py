@@ -14,12 +14,12 @@ def test_windows_launcher_is_suitable_for_double_clicking():
     assert "Could not find Python with Flask installed" in launcher
     assert "Get-NetTCPConnection" in launcher
     assert "Start-Process" in launcher
-    assert "title 意绘 V0.72" in launcher
+    assert "title 意绘 V0.73" in launcher
     assert "app.py --host %HOST% --port %PORT%" in launcher
-    assert "Close the old service and restart V0.72 in this CMD" in launcher
+    assert "Close the old service and restart V0.73 in this CMD" in launcher
     assert "Stop-Process -Id $conn.OwningProcess -Force" in launcher
     assert "Port %PORT% released." in launcher
-    assert "YiHui-V0.72.log" in launcher
+    assert "YiHui-V0.73.log" in launcher
     assert "Tee-Object -FilePath '%LOG_FILE%' -Append" in launcher
     assert "pause" in launcher.lower()
 
