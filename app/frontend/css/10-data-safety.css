@@ -1,0 +1,218 @@
+.data-safety-panel {
+
+  display: grid;
+
+  gap: 12px;
+
+}
+
+
+
+.data-safety-top-row {
+
+  align-items: center;
+
+}
+
+
+
+.data-safety-actions {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: flex-end;
+
+  gap: 8px;
+
+}
+
+.data-safety-actions button,
+.data-safety-card button {
+  min-height: var(--button-height);
+  border-radius: var(--control-radius);
+}
+
+
+
+.data-safety-grid {
+
+  display: grid;
+
+  grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+
+  gap: 12px;
+
+  align-items: start;
+
+}
+
+
+
+.data-safety-card {
+
+  display: grid;
+
+  gap: 10px;
+
+  min-width: 0;
+
+  padding: 12px;
+
+  border: 1px solid var(--line);
+
+  border-radius: 8px;
+
+  background: var(--panel-soft);
+
+}
+
+
+
+.data-safety-list-card {
+
+  grid-row: span 2;
+
+}
+
+
+
+.data-safety-card-title {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: baseline;
+
+  gap: 6px 10px;
+
+}
+
+
+
+.data-safety-card-title h2 {
+
+  margin: 0;
+
+  font-size: 16px;
+
+}
+
+
+
+.data-safety-card-title span,
+
+.data-safety-note {
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 12px;
+
+  line-height: 1.45;
+
+}
+
+.thumbnail-cache-meta {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.thumbnail-cache-meta span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.data-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  min-width: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+
+
+.backup-list {
+
+  display: grid;
+
+  gap: 6px;
+
+}
+
+
+
+.backup-row {
+
+  display: grid;
+
+  grid-template-columns: 150px 72px 88px 78px minmax(0, 1fr);
+
+  gap: 8px;
+
+  align-items: center;
+
+  width: 100%;
+
+  min-height: 34px;
+
+  padding: 7px 9px;
+
+  text-align: left;
+
+}
+
+
+
+.backup-row-head {
+
+  min-height: 26px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: var(--muted);
+
+  font-size: 12px;
+
+  cursor: default;
+
+}
+
+
+
+.backup-row.is-selected {
+
+  border-color: var(--accent);
+
+  background: var(--accent-soft);
+
+}
+
+
+
+.backup-file-name {
+
+  min-width: 0;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+}
+
+

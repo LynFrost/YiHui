@@ -1,0 +1,19 @@
+# Python bytecode / caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Local Python environments
+.venv/
+venv/
+
+# Runtime-generated directories
+backup/
+cache/
+export/
+generated/
+logs/
+temp/
+data/
+config/AIImageManager.config.json

@@ -1,0 +1,132 @@
+.tag-management-panel {
+  display: grid;
+  gap: 12px;
+}
+
+.tag-management-top-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 10px 14px;
+}
+
+.tag-management-toolbar {
+  display: flex;
+  flex: 1 1 420px;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 8px;
+  min-width: 0;
+}
+
+.tag-management-search {
+  flex: 1 1 260px;
+  min-width: 180px;
+}
+
+.tag-management-status {
+  min-height: 20px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.tag-management-list {
+  display: grid;
+  gap: 6px;
+}
+
+.tag-management-card-grid {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 8px;
+  min-width: 0;
+}
+
+.tag-management-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto auto auto;
+  gap: 6px;
+  align-items: center;
+  min-width: 0;
+  padding: 9px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel-soft);
+}
+
+.tag-management-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.tag-management-count {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.tag-management-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 6px;
+}
+
+.tag-management-context-menu {
+  position: fixed;
+  z-index: 120;
+  display: grid;
+  gap: 4px;
+  min-width: 96px;
+  padding: 6px;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 14px 32px rgba(23, 32, 44, .18);
+}
+
+.tag-management-context-menu button {
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.tag-management-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.tag-merge-list {
+  display: grid;
+  max-height: min(420px, 60vh);
+  overflow: auto;
+  gap: 6px;
+  padding: 4px 0;
+}
+
+.tag-merge-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 7px 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+}
+
+.tag-merge-option input {
+  width: auto;
+  min-height: auto;
+}
+
+.tag-merge-option span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

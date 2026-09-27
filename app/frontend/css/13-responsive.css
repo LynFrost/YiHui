@@ -1,0 +1,327 @@
+@media (max-width: 1540px) {
+
+  :root {
+
+    --record-meta-col: 80px;
+
+    --record-prompt-col: minmax(360px, 1.2fr);
+
+    --record-input-col: minmax(260px, .95fr);
+
+    --record-size-col: 84px;
+
+    --record-output-col: 70px;
+
+    --record-detail-col: minmax(150px, .65fr);
+
+    --record-action-col: 80px;
+
+    --record-status-col: 72px;
+
+  }
+
+}
+
+
+
+@media (max-width: 1120px) {
+
+  :root {
+
+    --record-meta-col: 70px;
+
+    --record-prompt-col: minmax(250px, 1.1fr);
+
+    --record-input-col: minmax(280px, .95fr);
+
+    --record-size-col: 64px;
+
+    --record-output-col: 64px;
+
+    --record-detail-col: minmax(100px, .5fr);
+
+    --record-action-col: 64px;
+
+    --record-status-col: 72px;
+
+  }
+
+
+
+  .operation-area.image-record {
+
+    gap: var(--record-grid-gap);
+
+  }
+
+
+
+  .operation-button-row {
+
+    gap: var(--operation-button-gap);
+
+  }
+
+}
+
+
+
+@media (max-width: 980px) {
+
+  .operation-area.image-record {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .operation-area .operation-prompt,
+  .operation-area .record-generation-options,
+  .operation-area .operation-input-images,
+  .operation-area .record-detail,
+  .operation-area .operation-actions,
+  .operation-area .operation-status-panel {
+
+    grid-column: auto;
+
+  }
+
+}
+
+
+
+@media (max-width: 1200px) {
+
+  .data-safety-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+
+  .save-list {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+
+  .save-toolbar-main-row,
+  .save-toolbar-filter-row {
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  }
+
+  .save-toolbar-filter-row {
+
+    grid-template-columns: minmax(var(--tag-filter-width), 1fr) minmax(0, 1fr);
+
+  }
+
+
+
+  .history-toolbar-main-row,
+  .history-toolbar-filter-row,
+  .history-toolbar-date-row {
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  }
+
+
+
+  .toolbar-actions {
+
+    grid-column: 1 / -1;
+
+  }
+
+}
+
+
+
+@media (max-width: 760px) {
+  :root {
+    --topbar-height: 104px;
+  }
+
+  .topbar {
+
+    height: var(--topbar-height);
+
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    padding: 14px;
+
+  }
+
+
+
+  .app-shell {
+
+    padding: 10px;
+
+  }
+
+
+
+  .panel {
+
+    padding: 12px;
+
+  }
+
+
+
+  .image-record,
+
+  .operation-area.image-record,
+
+  .instance-card.image-record,
+
+  .save-list.is-single .instance-card.image-record,
+
+  .save-toolbar-main-row,
+  .save-toolbar-filter-row,
+
+  .history-toolbar-main-row,
+  .history-toolbar-filter-row,
+  .history-toolbar-date-row,
+
+  .history-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+
+  .operation-area .operation-prompt,
+
+  .operation-area .record-generation-options,
+
+  .operation-area .operation-input-images,
+
+  .operation-area .record-detail,
+
+  .operation-area .operation-actions,
+
+  .operation-area .operation-status-panel,
+
+  .save-list.is-single .instance-card .instance-card-header,
+
+  .save-list.is-single .instance-card .instance-prompt,
+
+  .save-list.is-single .instance-card .record-input-images,
+
+  .save-list.is-single .instance-card .record-output-image,
+
+  .save-list.is-single .instance-card .record-detail,
+
+  .save-list.is-single .instance-card .instance-actions {
+
+    grid-column: auto;
+
+  }
+
+
+
+  .mode-row,
+
+  .record-actions,
+
+  .toolbar-actions,
+
+  .save-pagination {
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+  }
+
+
+
+  .toolbar-actions button,
+
+  .record-actions button,
+
+  .save-pagination button {
+
+    width: 100%;
+
+  }
+
+
+
+  .provider-identity-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+
+  .settings-title-row,
+
+  .section-title-row {
+
+    align-items: stretch;
+
+    flex-direction: column;
+
+  }
+
+
+
+  .settings-provider-select,
+
+  .settings-section-control {
+
+    width: 100%;
+
+    min-width: 0;
+
+    margin-left: 0;
+
+  }
+
+
+
+  .settings-top-actions {
+
+    margin-left: 0;
+
+    justify-content: stretch;
+
+  }
+
+
+
+  .data-safety-top-row,
+
+  .data-safety-actions,
+
+  .data-safety-card-title {
+
+    align-items: stretch;
+
+    flex-direction: column;
+
+  }
+
+
+
+  .backup-row {
+
+    grid-template-columns: 1fr;
+
+  }
+
+}

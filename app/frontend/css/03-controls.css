@@ -1,0 +1,89 @@
+.tabs,
+.mode-row,
+.toolbar-actions,
+.actions {
+  display: flex;
+  gap: var(--operation-button-gap);
+}
+
+button {
+  min-height: 32px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font: inherit;
+}
+
+button:hover {
+  border-color: var(--line-strong);
+  background: #fbfcfe;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: .5;
+}
+
+.tab.is-active,
+.primary,
+.mode-button.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.danger {
+  color: var(--danger);
+  border-color: #fed7aa;
+  background: var(--danger-soft);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  min-height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 7px 9px;
+  color: var(--ink);
+  background: #fff;
+  font: inherit;
+}
+
+textarea {
+  min-height: 86px;
+  resize: vertical;
+  line-height: 1.45;
+}
+
+textarea[readonly],
+input[readonly] {
+  background: #fbfcfe;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #cfe0ff;
+  border-color: var(--accent);
+}
+
+.field {
+  display: grid;
+  align-content: start;
+  gap: 4px;
+  min-width: 0;
+}
+
+.field > span,
+.field-title-row > span,
+.toolbar-field span,
+.operation-mode-block > span {
+  color: var(--muted);
+  font-size: 12px;
+}
+

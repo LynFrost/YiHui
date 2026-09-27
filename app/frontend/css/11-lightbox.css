@@ -1,0 +1,197 @@
+.lightbox-backdrop {
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 110;
+
+  display: grid;
+
+  grid-template-rows: auto minmax(0, 1fr);
+
+  gap: 10px;
+
+  padding: 14px;
+
+  overflow: hidden;
+
+  background: rgba(15, 23, 42, .84);
+
+}
+
+
+
+.image-hover-preview {
+
+  position: fixed;
+
+  inset: 18px;
+
+  z-index: 35;
+
+  display: grid;
+
+  place-items: center;
+
+  pointer-events: none;
+
+}
+
+
+
+.image-hover-preview img {
+
+  max-width: min(920px, calc(100vw - 36px));
+
+  max-height: calc(100vh - 36px);
+
+  border: 1px solid rgba(255, 255, 255, .7);
+
+  border-radius: 8px;
+
+  background: #fff;
+
+  box-shadow: 0 18px 48px rgba(15, 23, 42, .32);
+
+  object-fit: contain;
+
+}
+
+
+
+.lightbox-toolbar {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  color: #fff;
+
+}
+
+
+
+.lightbox-toolbar button {
+
+  border-color: rgba(255, 255, 255, .36);
+
+  background: rgba(255, 255, 255, .12);
+
+  color: #fff;
+
+}
+
+
+
+.lightbox-stage {
+
+  position: relative;
+
+  min-width: 0;
+
+  min-height: 0;
+
+  overflow: hidden;
+
+  display: grid;
+
+  place-items: center;
+
+}
+
+
+
+.lightbox-nav {
+
+  position: absolute;
+
+  top: 50%;
+
+  z-index: 2;
+
+  width: 42px;
+
+  height: 58px;
+
+  min-height: 58px;
+
+  padding: 0;
+
+  transform: translateY(-50%);
+
+  border-color: rgba(255, 255, 255, .36);
+
+  background: rgba(255, 255, 255, .14);
+
+  color: #fff;
+
+  font-size: 32px;
+
+}
+
+
+
+.lightbox-prev {
+
+  left: 12px;
+
+}
+
+
+
+.lightbox-next {
+
+  right: 12px;
+
+}
+
+
+
+.lightbox-image {
+
+  max-width: calc(100vw - 28px);
+
+  max-height: calc(100vh - 92px);
+
+  object-fit: contain;
+
+  cursor: grab;
+
+  user-select: none;
+
+  transform: translate(var(--lightbox-pan-x), var(--lightbox-pan-y)) scale(var(--lightbox-zoom));
+
+  transform-origin: center center;
+
+}
+
+
+
+.lightbox-image.is-dragging {
+
+  cursor: grabbing;
+
+}
+
+
+
+.lightbox-error {
+
+  padding: 14px 18px;
+
+  border: 1px solid rgba(255, 255, 255, .32);
+
+  border-radius: 8px;
+
+  background: rgba(255, 255, 255, .12);
+
+  color: #fff;
+
+}
+
+
